@@ -1,20 +1,17 @@
-//newCHR_Milestones.js
+// newCHR_Milestones.js
 /**
  * newCHR_Milestones Library
- * Version: 2.1
+ * Version: 2.2
  * Description: Render milestones by month with required milestone fields.
  * Adds ONE optional additional note per month.
  * License: MIT
  *
  * Author: Ahmed Shareef
- * Mobile: +960 7412365
- * GitHub: @AhmedSharyph
- * Website: https://www.ahmedsharyph.mv
  */
 
 const newCHR_Milestones = (() => {
 
-  // --- Milestones Data ---
+  // --- Milestones Data (Fill in your milestones later) ---
   const milestonesData = [
   // ================== 2 Months ==================
   { month: 2, category: "MILESTONE I - Social/Emotional Milestones", label: "Calms down when spoken to or picked up", name: "calms_down" },
@@ -197,17 +194,13 @@ const newCHR_Milestones = (() => {
 { month: 60, category: "MILESTONE III - Cognitive Milestones (Learning, Thinking, Problem-Solving)", label: "Writes some letters in her name", name: "writes_name" },
 { month: 60, category: "MILESTONE III - Cognitive Milestones (Learning, Thinking, Problem-Solving)", label: "Names some letters when you point to them", name: "names_letters" },
 { month: 60, category: "MILESTONE IV - Movement/Physical Development Milestones", label: "Buttons some buttons", name: "buttons" },
-{ month: 60, category: "MILESTONE IV - Movement/Physical Development Milestones", label: "Hops on one foot", name: "hops_one_foot" }
-];
-
-
-  ];
+{ month: 60, category: "MILESTONE IV - Movement/Physical Development Milestones", label: "Hops on one foot", name: "hops_one_foot" }  ];
 
   // --- Category color mapping ---
   const categoryColors = {
     "MILESTONE I - Social/Emotional Milestones": "bg-blue-100 border-blue-400",
     "MILESTONE II - Language/Communication Milestones": "bg-green-100 border-green-400",
-    "MILESTONE III - Cognitive Milestones (learning, thinking, problem-solving)": "bg-yellow-100 border-yellow-400",
+    "MILESTONE III - Cognitive Milestones (Learning, Thinking, Problem-Solving)": "bg-yellow-100 border-yellow-400",
     "MILESTONE IV - Movement/Physical Development Milestones": "bg-pink-100 border-pink-400"
   };
 
@@ -219,7 +212,7 @@ const newCHR_Milestones = (() => {
     const select = document.createElement("select");
     select.id = name;
     select.name = name;
-    select.required = true; // REQUIRED
+    select.required = true;
     select.className = "border border-gray-300 rounded px-2 py-1 w-full";
 
     const defaultOption = document.createElement("option");
@@ -237,7 +230,7 @@ const newCHR_Milestones = (() => {
     return select;
   }
 
-  // --- Render milestones form ---
+  // --- Render milestones form for a given month ---
   function renderForm(month, containerId) {
     const container = document.getElementById(containerId);
     if (!container) return;
@@ -283,7 +276,7 @@ const newCHR_Milestones = (() => {
       container.appendChild(catBox);
     });
 
-    // --- ONE OPTIONAL ADDITIONAL NOTE FIELD FOR THE MONTH ---
+    // --- Optional note field ---
     const noteWrapper = document.createElement("div");
     noteWrapper.className = "mt-6 bg-white p-4 rounded shadow";
 
@@ -295,11 +288,9 @@ const newCHR_Milestones = (() => {
     noteInput.className = "w-full border border-gray-300 rounded p-2";
     noteInput.rows = 3;
     noteInput.name = `${month}_additional_note`;
-    noteInput.required = false; // optional
 
     noteWrapper.appendChild(noteLabel);
     noteWrapper.appendChild(noteInput);
-
     container.appendChild(noteWrapper);
   }
 
