@@ -197,7 +197,7 @@ const newCHR_Milestones = (() => {
 { month: 60, category: "MILESTONE III - Cognitive Milestones (Learning, Thinking, Problem-Solving)", label: "Writes some letters in her name", name: "writes_name" },
 { month: 60, category: "MILESTONE III - Cognitive Milestones (Learning, Thinking, Problem-Solving)", label: "Names some letters when you point to them", name: "names_letters" },
 { month: 60, category: "MILESTONE IV - Movement/Physical Development Milestones", label: "Buttons some buttons", name: "buttons" },
-{ month: 60, category: "MILESTONE IV - Movement/Physical Development Milestones", label: "Hops on one foot", name: "hops_one_foot" },
+{ month: 60, category: "MILESTONE IV - Movement/Physical Development Milestones", label: "Hops on one foot", name: "hops_one_foot" }
 ];
 
 
